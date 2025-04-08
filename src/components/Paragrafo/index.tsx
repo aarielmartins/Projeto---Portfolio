@@ -10,6 +10,7 @@ export type Props = {
   //OU O 'PRINCIPAL' OU O 'SECUNDARIO'
   children: string
   tipo?: 'principal' | 'secundario'
+  fontSize?: number
 }
 
 //AQUI INDICAMOS QUE AO USAR O COMPONENTE PARAGRAFO VAMOS PRECISAR
@@ -17,8 +18,10 @@ export type Props = {
 //QUANDO A FUNÇÃO TEM APENAS UMA LINHA NÃO É NECESSÁRIO O "()"
 //NESSE CASO FIZEMOS UMA DESESTRUTURAÇÃO DA PROPS, EM QUE O TIPO INICIAL
 //SERA "PRINCIPAL"
-const Paragrafo = ({ children, tipo = 'principal' }: Props) => (
-  <P tipo={tipo}>{children}</P>
+const Paragrafo = ({ children, tipo = 'principal', fontSize }: Props) => (
+  <P fontSize={fontSize} tipo={tipo}>
+    {children}
+  </P>
 )
 
 export default Paragrafo
